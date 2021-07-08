@@ -1,0 +1,39 @@
+<section class="d-flex flex-column justify-content-center vh-100">
+  <h1 class="text-center title display-3 my-0 animated heartBeat">MAH URL</h1>
+  <div class="des">
+    <p><i>share the better</i></p>
+  </div>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <form class="w-75 mx-auto d-flex flex-column align-items-center animated jackInTheBox" novalidate>
+    {{#if error}}
+    <div class="alert alert-danger alert-dismissible fade show w-100" role="alert">
+      {{error}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {{/if}}
+    <div class="form-group w-100">
+      <label for="url" class="sr-only"></label>
+      <input type="url" name="url" id="url" class="form-control" pattern="https?://.+" value="{{inputUrl}}"
+        placeholder="Enter url in http(s) protocol" required>
+      <div class="invalid-feedback">
+        Please enter a valid url starting with: http:// or https://
+      </div>
+    </div>
+    <div class="input-group w-100 d-none" id="url-result">
+      <input type="url" id="result" name="result" class="form-control">
+      <div class="input-group-append mb-3">
+        <button class="btn btn-outline-secondary btt" type="button" id="copy-btn"><div class="txx">Copy</div></button>
+      </div>
+    </div>
+    <div class="buttons d-flex w-100 justify-content-center mt-3">
+      <button class="btn btn-primary mr-4 px-5 btt" id="submit">Submit</button>
+      <button class="btn btn-danger px-5" id="reset" type="button">Reset</button>
+    </div>
+  </form>
+</section>
+<span></span>
